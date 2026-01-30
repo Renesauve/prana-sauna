@@ -20,27 +20,33 @@ export default function Gallery() {
 
   return (
     <>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <div className="gallery">
         {images.map((image, i) => (
-          <button
-            key={i}
-            onClick={() => {
-              setIndex(i);
-              setOpen(true);
-            }}
-            className={`relative aspect-square overflow-hidden rounded-lg cursor-pointer hover:opacity-90 transition-opacity ${
-              i % 2 === 0 ? "animate-fade-in-left" : "animate-fade-in-right"
-            }`}
-            style={{ animationDelay: `${i * 0.1}s` }}
-          >
-            <Image
-              src={image.thumb}
-              alt={`Gallery image ${i + 1}`}
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 50vw, 33vw"
-            />
-          </button>
+          <article key={i} className={i % 2 === 0 ? "from-left" : "from-right"}>
+            <button
+              onClick={() => {
+                setIndex(i);
+                setOpen(true);
+              }}
+              className="image fit"
+              style={{
+                cursor: "pointer",
+                border: "none",
+                padding: 0,
+                background: "none",
+                display: "block",
+                width: "100%"
+              }}
+            >
+              <Image
+                src={image.thumb}
+                alt={`Gallery image ${i + 1}`}
+                width={400}
+                height={300}
+                style={{ width: "100%", height: "auto", display: "block" }}
+              />
+            </button>
+          </article>
         ))}
       </div>
 

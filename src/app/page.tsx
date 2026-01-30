@@ -3,225 +3,263 @@
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope, faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import Gallery from "@/components/Gallery";
 import Script from "next/script";
 
 export default function Home() {
   return (
-    <main className="snap-container">
+    <>
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 p-4 flex justify-between items-center">
+      <header id="header">
         <Image
           src="/mainLogo.png"
           alt="Prana Sauna Logo"
-          width={120}
-          height={40}
-          className="h-10 w-auto"
+          width={150}
+          height={50}
+          className="logo"
+        />
+        <Script
+          src="https://fareharbor.com/embeds/api/v1/?autolightframe=yes"
+          strategy="lazyOnload"
         />
       </header>
 
-      {/* Intro Section */}
-      <section
-        id="intro"
-        className="snap-section section-intro min-h-screen flex items-center justify-center text-white text-center px-4"
-      >
-        <div className="max-w-2xl">
-          <Image
-            src="/logo.svg"
-            alt="Prana Sauna"
-            width={300}
-            height={100}
-            className="mx-auto mb-8 invert"
-          />
-          <p className="font-gyst text-lg md:text-xl mb-8 leading-relaxed">
+      {/* Intro */}
+      <section id="intro" className="main style1 dark fullscreen">
+        <div className="content">
+          <header>
+            <Image
+              src="/logo.svg"
+              alt="Prana Sauna Logo"
+              width={300}
+              height={100}
+              style={{ filter: "brightness(0) invert(1)" }}
+            />
+          </header>
+          <p className="tk-gyst-variable white">
             Welcome to <strong>Prana Sauna.</strong> This 12 person sauna-on-wheels
             was hand-crafted with the intention of creating an authentic sauna
             experience where you connect to nature, physical and mental wellness,
             and community.
           </p>
-          <a
-            href="#one"
-            className="inline-flex items-center gap-2 btn-primary"
-          >
-            Learn More
-            <FontAwesomeIcon icon={faChevronDown} className="w-4 h-4" />
-          </a>
+          <footer>
+            <a href="#one" className="button style2 down">
+              Contact
+            </a>
+          </footer>
         </div>
       </section>
 
-      {/* What We Do Section */}
-      <section
-        id="one"
-        className="snap-section section-one min-h-screen flex items-center justify-end text-white px-4 md:px-16"
-      >
-        <div className="bg-black/60 backdrop-blur-sm p-8 md:p-12 rounded-2xl max-w-md">
-          <h2 className="font-gyst text-3xl md:text-4xl mb-6">What We Do</h2>
-          <p className="font-gyst text-base md:text-lg leading-relaxed">
+      {/* One - What We Do */}
+      <section id="one" className="main style2 right dark fullscreen">
+        <div className="content box style2">
+          <header>
+            <h2 className="tk-gyst-variable">What We Do</h2>
+          </header>
+          <p className="tk-gyst-variable">
             We are happy to provide delivery up and down the Sunshine Coast to
-            residences for private bookings.* We are in purpose of creating access
-            to a spa-like experience for all, and community sessions offered at the
-            Sechelt Pier.
+            residences for private bookings.* We are in purpose of creating
+            access to a spa-like experience for all, and community sessions
+            offered at the Sechelt Pier.
           </p>
         </div>
-        <a
-          href="#two"
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white animate-bounce"
-        >
-          <FontAwesomeIcon icon={faChevronDown} className="w-8 h-8" />
+        <a href="#two" className="button style2 down anchored">
+          Next
         </a>
       </section>
 
-      {/* Pricing Section */}
-      <section
-        id="two"
-        className="snap-section section-two min-h-screen flex items-center justify-start text-white px-4 md:px-16"
-      >
-        <div className="bg-black/60 backdrop-blur-sm p-8 md:p-12 rounded-2xl max-w-lg">
-          <h2 className="font-gyst text-2xl md:text-3xl mb-4">Overnight rentals:</h2>
-          <ul className="font-gyst text-base md:text-lg mb-6 space-y-1">
+      {/* Two - Pricing */}
+      <section id="two" className="main style2 left dark fullscreen">
+        <div className="content box style2">
+          <header>
+            <h2 className="tk-gyst-variable">Overnight rentals:</h2>
+          </header>
+          <ul className="tk-gyst-variable">
             <li>$2.00/km delivery rate</li>
             <li>$300 one-night rental</li>
             <li>$450 two-night rental</li>
             <li>$600 three-night rental</li>
             <li>$30/person for community nights</li>
           </ul>
-
-          <h2 className="font-gyst text-2xl md:text-3xl mb-4">Add-Ons:</h2>
-          <ul className="font-gyst text-base md:text-lg mb-6 space-y-1">
+          <header>
+            <h2 className="tk-gyst-variable">Add-Ons:</h2>
+          </header>
+          <ul className="tk-gyst-variable">
             <li>$25/night add on for cold plunge rentals</li>
             <li>$40 of firewood for a 2-3 hour burn</li>
           </ul>
-
-          <h2 className="font-gyst text-2xl md:text-3xl mb-4">Sauna by the Sea:</h2>
-          <ul className="font-gyst text-base md:text-lg mb-6 space-y-1">
+          <header>
+            <h2 className="tk-gyst-variable">Sauna by the Sea:</h2>
+          </header>
+          <ul className="tk-gyst-variable">
             <li>$25/person 90mins</li>
             <li>$300/12-person private beachside</li>
           </ul>
-
-          <h2 className="font-gyst text-2xl md:text-3xl mb-4">3-Month punch pass:</h2>
-          <ul className="font-gyst text-base md:text-lg space-y-1">
+          <header>
+            <h2 className="tk-gyst-variable">3-Month punch pass:</h2>
+          </header>
+          <ul className="tk-gyst-variable">
             <li>$200 ten-punch pass</li>
             <li>$110 five-punch pass</li>
           </ul>
         </div>
-        <a
-          href="#three"
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white animate-bounce"
-        >
-          <FontAwesomeIcon icon={faChevronDown} className="w-8 h-8" />
+        <a href="#three" className="button style2 down anchored">
+          Next
         </a>
       </section>
 
-      {/* FAQ Section */}
-      <section
-        id="three"
-        className="snap-section section-three min-h-screen flex items-center justify-end text-white px-4 md:px-16"
-      >
-        <div className="bg-black/60 backdrop-blur-sm p-8 md:p-12 rounded-2xl max-w-md">
-          <h2 className="font-gyst text-3xl md:text-4xl mb-2">FAQ</h2>
-          <h3 className="font-gyst text-2xl md:text-3xl mb-6">What should I bring?</h3>
-          <ul className="font-gyst text-base md:text-lg space-y-2">
+      {/* Three - FAQ */}
+      <section id="three" className="main style2 right dark fullscreen">
+        <div className="content box style2">
+          <header>
+            <h2 className="tk-gyst-variable">FAQ</h2>
+            <h2 className="tk-gyst-variable">What should I bring?</h2>
+          </header>
+          <ul className="tk-gyst-variable">
             <li>Two towels (one to sit on and one to dry off with)</li>
-            <li>A bathing suit or clothing you&apos;re comfortable sweating and plunging in</li>
+            <li>
+              A bathing suit or clothing you&apos;re comfortable sweating and
+              plunging in
+            </li>
             <li>Water shoes</li>
             <li>A water bottle (no glass, please)</li>
           </ul>
         </div>
-        <a
-          href="#work"
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white animate-bounce"
-        >
-          <FontAwesomeIcon icon={faChevronDown} className="w-8 h-8" />
+        <a href="#work" className="button style2 down anchored">
+          Next
         </a>
       </section>
 
-      {/* Gallery / Mission Section */}
-      <section id="work" className="snap-section min-h-screen bg-white py-16 px-4 md:px-16">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="font-gyst text-3xl md:text-4xl text-center mb-4">Our Mission</h2>
-          <p className="font-gyst text-base md:text-lg text-center max-w-3xl mx-auto mb-12">
-            At Prana Sauna, our mission is to cultivate connections and foster
-            community through the power of holistic wellness. We strive to build
-            meaningful relationships and create a strong network within our
-            community, making a lasting presence that promotes health and well-being.
-          </p>
+      {/* Work - Gallery */}
+      <section id="work" className="main style3 primary">
+        <div className="content">
+          <header>
+            <h2 className="tk-gyst-variable">Our Mission</h2>
+            <p className="tk-gyst-variable">
+              At Prana Sauna, our mission is to cultivate connections and foster
+              community through the power of holistic wellness. We strive to
+              build meaningful relationships and create a strong network within
+              our community, making a lasting presence that promotes health and
+              well-being.
+            </p>
+          </header>
+
+          {/* Gallery */}
           <Gallery />
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="snap-section section-contact min-h-screen py-16 px-4 md:px-16">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="font-gyst text-3xl md:text-4xl text-center mb-4">Contact Us</h2>
-          <p className="font-gyst text-base md:text-lg text-center mb-8">
-            Follow us on Instagram and sign up for our email list for notification
-            of community beach nights.
-          </p>
-
-          {/* Social Links */}
-          <div className="flex flex-col sm:flex-row justify-center gap-6 mb-12">
-            <a
-              href="https://www.instagram.com/pranasauna_"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 justify-center hover:opacity-70 transition-opacity"
-            >
-              <FontAwesomeIcon icon={faInstagram} className="w-8 h-8" />
-              <span className="font-gyst text-lg">@pranasauna_</span>
-            </a>
-            <a
-              href="mailto:pranasauna@gmail.com"
-              className="flex items-center gap-3 justify-center hover:opacity-70 transition-opacity"
-            >
-              <FontAwesomeIcon icon={faEnvelope} className="w-8 h-8" />
-              <span className="font-gyst text-lg">pranasauna@gmail.com</span>
-            </a>
-          </div>
-
-          {/* Newsletter Form */}
-          <div className="bg-white rounded-2xl p-8 shadow-lg max-w-md mx-auto mb-12">
-            <h3 className="text-xl font-semibold mb-4 text-center">Subscribe to our Newsletter</h3>
-            <p className="text-sm text-gray-500 mb-4 text-center">
-              <span className="text-red-500">*</span> indicates required
+      {/* Contact */}
+      <section id="contact" className="main style3 secondary">
+        <div className="content">
+          <header>
+            <h2 className="tk-gyst-variable">Contact Us</h2>
+            <p className="tk-gyst-variable">
+              Follow us on Instagram and sign up for our email list for
+              notification of community beach nights.
             </p>
-            <form
-              action="https://gmail.us17.list-manage.com/subscribe/post?u=c096ccb7677d7f82c92eee94f&amp;id=eb764d081a&amp;f_id=00e6c3e1f0"
-              method="post"
-              target="_blank"
-              className="space-y-4"
-            >
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-1">
-                  Email Address <span className="text-red-500">*</span>
-                </label>
-                <input
-                  type="email"
-                  name="EMAIL"
-                  id="email"
-                  required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#455E49] focus:border-transparent outline-none"
-                  placeholder="your@email.com"
-                />
-              </div>
-              {/* Anti-spam honeypot */}
-              <div aria-hidden="true" className="absolute -left-[5000px]">
-                <input
-                  type="text"
-                  name="b_c096ccb7677d7f82c92eee94f_eb764d081a"
-                  tabIndex={-1}
-                  defaultValue=""
-                />
-              </div>
-              <button type="submit" className="w-full btn-primary">
-                Subscribe
-              </button>
-            </form>
+          </header>
+
+          {/* Social Icons and Email */}
+          <div className="contact-social">
+            <div className="contact-item">
+              <a
+                href="https://www.instagram.com/pranasauna_"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="icon"
+              >
+                <FontAwesomeIcon icon={faInstagram} />
+              </a>
+              <a
+                href="https://www.instagram.com/pranasauna_"
+                className="tk-gyst-variable"
+              >
+                @pranasauna_
+              </a>
+            </div>
+            <div className="contact-item">
+              <a href="mailto:pranasauna@gmail.com" className="icon">
+                <FontAwesomeIcon icon={faEnvelope} />
+              </a>
+              <a href="mailto:pranasauna@gmail.com" className="tk-gyst-variable">
+                pranasauna@gmail.com
+              </a>
+            </div>
           </div>
 
-          {/* FareHarbor Calendar */}
-          <div className="bg-white rounded-2xl p-4 shadow-lg">
-            <div id="fareharbor-calendar" />
+          {/* Newsletter Subscription */}
+          <div className="box">
+            <div id="mc_embed_signup">
+              <form
+                action="https://gmail.us17.list-manage.com/subscribe/post?u=c096ccb7677d7f82c92eee94f&amp;id=eb764d081a&amp;f_id=00e6c3e1f0"
+                method="post"
+                id="mc-embedded-subscribe-form"
+                name="mc-embedded-subscribe-form"
+                target="_blank"
+              >
+                <div id="mc_embed_signup_scroll">
+                  <h2>Subscribe to our Newsletter</h2>
+                  <div className="indicates-required">
+                    <span className="asterisk">*</span> indicates required
+                  </div>
+
+                  <div className="mc-field-group">
+                    <label htmlFor="mce-EMAIL">
+                      Email Address <span className="asterisk">*</span>
+                    </label>
+                    <input
+                      type="email"
+                      name="EMAIL"
+                      className="required email"
+                      id="mce-EMAIL"
+                      required
+                    />
+                  </div>
+
+                  <div id="mce-responses" className="clear foot">
+                    <div
+                      className="response"
+                      id="mce-error-response"
+                      style={{ display: "none" }}
+                    ></div>
+                    <div
+                      className="response"
+                      id="mce-success-response"
+                      style={{ display: "none" }}
+                    ></div>
+                  </div>
+
+                  {/* Hidden anti-spam field */}
+                  <div
+                    aria-hidden="true"
+                    style={{ position: "absolute", left: "-5000px" }}
+                  >
+                    <input
+                      type="text"
+                      name="b_c096ccb7677d7f82c92eee94f_eb764d081a"
+                      tabIndex={-1}
+                      defaultValue=""
+                    />
+                  </div>
+
+                  <div className="clear foot">
+                    <input
+                      type="submit"
+                      value="Subscribe"
+                      name="subscribe"
+                      id="mc-embedded-subscribe"
+                      className="button"
+                    />
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          {/* FareHarbor calendar */}
+          <div style={{ paddingTop: "20px" }}>
             <Script
               src="https://fareharbor.com/embeds/script/calendar/pranasauna/?fallback=simple&full-items=yes&flow=1557441"
               strategy="lazyOnload"
@@ -231,39 +269,52 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#39454b] text-white py-8 px-4">
-        <div className="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
-          <div className="flex gap-4">
+      <footer id="footer">
+        {/* Icons */}
+        <ul className="icons">
+          <li>
             <a
               href="https://www.instagram.com/pranasauna_"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:opacity-70 transition-opacity"
+              className="icon brands"
             >
-              <FontAwesomeIcon icon={faInstagram} className="w-6 h-6" />
+              <FontAwesomeIcon icon={faInstagram} />
+              <span className="label">Instagram</span>
             </a>
-            <a
-              href="mailto:pranasauna@gmail.com"
-              className="hover:opacity-70 transition-opacity"
-            >
-              <FontAwesomeIcon icon={faEnvelope} className="w-6 h-6" />
+          </li>
+          <li>
+            <a href="mailto:pranasauna@gmail.com" className="icon">
+              <FontAwesomeIcon icon={faEnvelope} />
             </a>
-          </div>
-          <p className="text-sm">&copy; Copyright 2026 Prana Sauna</p>
-        </div>
+          </li>
+        </ul>
+
+        {/* Menu */}
+        <ul className="menu">
+          <li>&copy; Copyright 2026 Prana Sauna</li>
+        </ul>
       </footer>
 
       {/* FareHarbor Book Now Button */}
-      <Script
-        src="https://fareharbor.com/embeds/api/v1/?autolightframe=yes"
-        strategy="lazyOnload"
-      />
       <a
         href="https://fareharbor.com/embeds/book/pranasauna/?full-items=yes"
-        className="fixed bottom-4 right-4 btn-primary flex items-center gap-2 shadow-lg z-50"
+        className="tk-gyst-variable fh-button-true-flat-pop"
+        style={{
+          position: "fixed",
+          bottom: "20px",
+          right: "20px",
+          backgroundColor: "#455E49",
+          color: "white",
+          padding: "1em 2em",
+          borderRadius: "3.5em",
+          textDecoration: "none",
+          zIndex: 9999,
+          boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
+        }}
       >
         Book Now
       </a>
-    </main>
+    </>
   );
 }
