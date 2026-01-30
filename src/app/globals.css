@@ -1,26 +1,112 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-primary: #ffffff;
+  --color-dark: #39454b;
+  --color-accent-green: #98c593;
+  --color-accent-blue: #9ac8e9;
+  --color-contact-tan: #D1B9A3;
+  --color-button-green: #455E49;
+  --color-button-hover: #BB6839;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--color-primary);
+  --color-foreground: var(--color-dark);
+  --font-sans: var(--font-source-sans);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-primary);
+  color: var(--color-dark);
+}
+
+/* Custom font class for branded italic text */
+.font-gyst {
+  font-style: italic;
+  font-weight: 300;
+}
+
+/* Smooth scroll snap for sections */
+@media (min-width: 1024px) {
+  .snap-container {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+  }
+
+  .snap-section {
+    scroll-snap-align: start;
+  }
+}
+
+/* Gallery animations */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in-left {
+  animation: fadeInLeft 0.6s ease-out forwards;
+}
+
+.animate-fade-in-right {
+  animation: fadeInRight 0.6s ease-out forwards;
+}
+
+/* Button styles */
+.btn-primary {
+  background-color: var(--color-button-green);
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-button-hover);
+  transform: translateY(-2px);
+}
+
+/* Section backgrounds */
+.section-intro {
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/intro.jpg') center/cover fixed;
+}
+
+.section-one {
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/one.jpg') center/cover fixed;
+}
+
+.section-two {
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/two.jpg') center/cover fixed;
+}
+
+.section-three {
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/cody-chan-F6Xk9bXzHek-unsplash.jpg') center/cover fixed;
+}
+
+.section-contact {
+  background-color: var(--color-contact-tan);
 }
